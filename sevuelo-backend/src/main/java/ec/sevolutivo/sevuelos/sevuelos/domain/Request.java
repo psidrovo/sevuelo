@@ -32,9 +32,22 @@ public class Request implements Serializable {
     private String destination;
 
     @NotNull
+    @Size(max = 500)
+    @Column(name = "comment", length = 500, nullable = false)
+    private String comment;
+
+    @NotNull
     @Enumerated(EnumType.STRING)
     @Column(name = "status", nullable = false)
     private RequestStatus status;
+
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
 
     public Long getId() {
         return id;
@@ -93,6 +106,7 @@ public class Request implements Serializable {
                 ", passenger='" + getPassenger() + "'" +
                 ", destination='" + getDestination() + "'" +
                 ", status='" + getStatus() + "'" +
+                ", comment='" + getComment() + "'"+
                 "}";
     }
 }

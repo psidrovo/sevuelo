@@ -1,23 +1,23 @@
 <h2>Requests</h2>
+<div class="text" *ngIf="requests && requests.length == 0">
+    Data not found
+</div>
 
 <div class="table-responsive" *ngIf="requests && requests.length > 0">
     <table class="table table-striped" aria-describedby="page-heading">
         <thead>
             <tr>
+                <th scope="col"></th>
                 <th scope="col">Id</th>
                 <th scope="col">Passenger</th>
                 <th scope="col">Destination</th>
                 <th scope="col">Status</th>
-                <th scope="col"></th>
+                
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let request of requests">
-                <td>{{ request.id }}</td>
-                <td>{{ request.passenger }}</td>
-                <td>{{ request.destination }}</td>
-                <td>{{ request.status }}</td>
-                <td class="text-right">
+                <td class="text-center">
                     <div class="btn-group">
                         <button type="submit"
                                 routerLink="/requests/{{request.id}}"
@@ -27,6 +27,11 @@
                         </button>                        
                     </div>
                 </td>
+                <td>{{ request.id }}</td>
+                <td>{{ request.passenger }}</td>
+                <td>{{ request.destination }}</td>
+                <td>{{ request.status }}</td>
+                
             </tr>
         </tbody>
     </table>

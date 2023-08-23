@@ -53,5 +53,12 @@ public class RequestResource {
         requestRepository.save(request);
     }
 
+    @PutMapping("/status")
+    public void statusChange(@RequestBody Request request) {
+        log.debug("REST request to change status flight");
+        request.setStatus(RequestStatus.NEW);
+        requestRepository.save(request);
+    }
+
 
 }

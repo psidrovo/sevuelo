@@ -40,4 +40,13 @@ export class RequestDetailComponent implements OnInit {
     );
   }
 
+  newStatus(): void {
+    this.requestService.statusRequest(this.request)
+      .subscribe((newRequest) => {
+        this.request = newRequest
+        this.previousState();
+      }
+    );
+  }
+
 }

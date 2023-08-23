@@ -24,12 +24,20 @@
               </span>
             </label>
         </div>
+        <div>
+          <label>Comment:
+            <span>
+                {{request.comment}}
+            </span>
+          </label>
+        </div>
         <button type="submit"
             (click)="previousState()"
             class="btn btn-info">
           <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
         </button>
         <button (click)="reserve()" class="btn btn-success">Reserve</button>
-    </div>
+        <button (click)="newStatus()" class="btn btn-success">New</button>
+      </div>
   </div>
 </div>
